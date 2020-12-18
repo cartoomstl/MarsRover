@@ -16,11 +16,18 @@ describe("Rover class", function() {
   it("should return name of message when calling receiveMessage method", function() {
     const rover = new Rover("745");
     const message = new Message("e1"
-                              , [new Command('MODE_CHANGE', 'LOW_POWER')]);
+      , [new Command('MODE_CHANGE', 'LOW_POWER')]);
     let response = rover.receiveMessage(message);
-    assert.strictEqual(response.message, message.message);
+    assert.strictEqual(response.message, message.name);
   });
 
+  //  it("should return name of message when calling receiveMessage method", function() {
+   // const rover = new Rover("745");
+    //const message = new Message("e1"
+   //                       , [new Command('MODE_CHANGE', 'LOW_POWER')]);
+    //let response = rover.receiveMessage(message);
+    //assert.strictEqual(response.message, message.message);
+  //});
   it("should return two results if two commands are sent in message", function() {
     const rover = new Rover("777");
     const message = new Message("e1"
