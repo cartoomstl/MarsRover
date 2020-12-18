@@ -15,7 +15,17 @@ describe("Command class", function() {
   });
  
   it("constructor sets command type", function() {
-  });
+    new Command("string","Command class correctly sets the command Type.");
+},
+{
+message: "Command class correctly sets the command type"
 });
-it("constructor sets a value passed in as the 2nd argument", function() {
+
+it("Constructor sets a value passed in as the 2nd argument.", function() {
+  new Command('string', "Command class correctly sets the value." );
+},
+{
+message:'Constructor MUST set a value as the 2nd argument'
+}
+);
 });

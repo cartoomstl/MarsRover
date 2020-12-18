@@ -10,6 +10,7 @@ describe("Rover class", function() {
     const rover = new Rover("121500");
     assert.strictEqual(rover.position, "121500");
     assert.strictEqual(rover.generatorWatts, 110);
+    assert.strictEqual(rover.mode, "NORMAL");
   });
 
   it("should return name of message when calling receiveMessage method", function() {
@@ -17,7 +18,7 @@ describe("Rover class", function() {
     const message = new Message("e1"
                               , [new Command('MODE_CHANGE', 'LOW_POWER')]);
     let response = rover.receiveMessage(message);
-    assert.strictEqual(response.name, message.name);
+    assert.strictEqual(response.message, message.message);
   });
 
   it("should return two results if two commands are sent in message", function() {
